@@ -29,7 +29,7 @@
         
         <v-layout row wrap>
             <v-flex xs12 sm6 md6 lg4 v-for="(item, idx) in recipes" :key="idx">
-                <v-card data-cy="recipeEntry" v-if="recipes.healthLabels = 'Alcohol-Free'">
+                <v-card data-cy="recipeEntry" >
                     <v-responsive>
                         <v-img :src="item.recipe.image"></v-img>
                     </v-responsive>

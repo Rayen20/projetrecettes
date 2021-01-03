@@ -112,7 +112,7 @@ export default new Vuex.Store({
             try {
                
 
-               await axios.get('https://api.edamam.com/search?q='+query+'&app_id=5bc91d77&app_key=131f5e5e59a9fa14117b1d6410957dbe&diet=low-fat&health=fat-free').then(res => {
+               await axios.get('https://api.edamam.com/search?q='+query+'&app_id=5bc91d77&app_key=131f5e5e59a9fa14117b1d6410957dbe&diet=low-fat').then(res => {
                    
                     // get body data
                     this.results = res;
