@@ -1,28 +1,59 @@
 <template>
-  <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
-  </div>
+ 
+    <v-app id="app">
+    
+ 
+    <recette></recette>
+    
+
+    </v-app>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+
+import Recette from './components/Recette.vue'
 
 export default {
   name: 'App',
   components: {
-    HelloWorld
+    Recette
+    
+    
+
+    
   }
 }
 </script>
+<style scoped>
+@import url("https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,300i,400,400i,600,600i,700&display=swap");
 
-<style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
+* {
+  font-family: "Source Sans Pro", sans-serif;
+  margin: 0;
+  padding: 0;
+  text-decoration: none;
+  list-style-type: none;
+  outline: none;
 }
+
+html {
+  font-size: 62.5%;
+}
+
+.App {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+h1 {
+  font-size: 8rem;
+  letter-spacing: 0.1rem;
+  font-style: italic;
+  color: #40b48e;
+  text-shadow: 0 0.2rem 5rem rgb(119, 115, 115);
+  text-transform: uppercase;
+  margin: 4rem 0;
+}
+
 </style>

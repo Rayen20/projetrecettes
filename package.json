@@ -13,7 +13,7 @@
     "core-js": "^3.8.1",
     "firebase": "^8.2.1",
     "uuidv4": "^6.2.6",
-    
+    "v-easy-dialog": "^1.0.6",
     "vue": "^2.6.11",
     "vue-cli-plugin-vuetify": "^2.0.9",
     "vue-router": "^3.4.9",
