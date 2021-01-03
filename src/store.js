@@ -57,7 +57,7 @@ export default new Vuex.Store({
             try {
                
 
-               await axios.get('https://api.edamam.com/search?q='+query+'&app_id=5b6623d5&app_key=46674aa2193dbb7b88ffd897331e661a').then(res => {
+               await axios.get('https://api.edamam.com/search?q='+query+'&app_id=5bc91d77&app_key=131f5e5e59a9fa14117b1d6410957dbe').then(res => {
                    
                     // get body data
                     this.results = res;
@@ -85,7 +85,7 @@ export default new Vuex.Store({
             try {
                
 
-               await axios.get('https://api.edamam.com/search?q='+query+'&app_id=5b6623d5&app_key=46674aa2193dbb7b88ffd897331e661a&health=alcohol-free').then(res => {
+               await axios.get('https://api.edamam.com/search?q='+query+'&app_id=5bc91d77&app_key=131f5e5e59a9fa14117b1d6410957dbe&health=alcohol-free').then(res => {
                    
                     // get body data
                     this.results = res;
@@ -121,17 +121,7 @@ export default new Vuex.Store({
                     //console.log( JSON.parse(this.results));
             
                 });
-                // sbdinc keys
-                // let response = await axios.get(`${state.apiUrl}`, {
-                //     params: {
-                //         q: plan,
-                //         app_id: '903de977',
-                //         app_key: '1b5fbf78de2db637b392f141c524222c\t',
-                //         from: 0,
-                //         to: 9
-                //     }
-                // });
-                
+               
               console.log(this.results);
               
                 commit('setQuery', query);
