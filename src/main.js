@@ -7,7 +7,7 @@ import router from './router';
 import '@babel/polyfill';
 import Vuetify from 'vuetify';
 
-Vue.config.productionTip = false
+
 
 Vue.config.productionTip = false
 Vue.use(Vuetify);

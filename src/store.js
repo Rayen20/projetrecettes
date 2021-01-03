@@ -25,10 +25,7 @@ export default new Vuex.Store({
         setRecipes(state, payload) {
             state.recipes = payload;
         },
-        setUser(state, payload) {
-            state.user = payload;
-        },
-       
+      
         setShow(state, sh){
             state.show = sh
         },
@@ -56,12 +53,101 @@ export default new Vuex.Store({
              
             }
           },
+          async getRecipes({ commit } ,query) {
+            try {
+               
+
+               await axios.get('https://api.edamam.com/search?q='+query+'&app_id=5b6623d5&app_key=46674aa2193dbb7b88ffd897331e661a').then(res => {
+                   
+                    // get body data
+                    this.results = res;
+
+                    return res
+                    
+            
+                });
+                
+                
+              console.log(this.results);
+              console.log(this.state.recipes[0]);
+                commit('setQuery', query);
+                commit('setRecipes', this.results.data.hits);
+                console.log(this.state.query);
+                
+
+            } catch (error) {
+                commit('setRecipes', []);
+            }
+        },
        
        
-    
+        async getNoalcool({ commit } ,query) {
+            try {
+               
+
+               await axios.get('https://api.edamam.com/search?q='+query+'&app_id=5b6623d5&app_key=46674aa2193dbb7b88ffd897331e661a&health=alcohol-free').then(res => {
+                   
+                    // get body data
+                    this.results = res;
+
+                    return res
+                    //console.log( JSON.parse(this.results));
+            
+                });
+                
+              console.log(this.results);
+              console.log(this.state.recipes[0]);
+                commit('setQuery', query);
+                commit('setRecipes', this.results.data.hits);
+                console.log(this.state.query);
+                
+
+            } catch (error) {
+                commit('setRecipes', []);
+            }
+        },
          
         
+        async getNogluten({ commit } ,query) {
+            try {
+               
 
+               await axios.get('https://api.edamam.com/search?q='+query+'&app_id=5bc91d77&app_key=131f5e5e59a9fa14117b1d6410957dbe&diet=low-fat&health=fat-free').then(res => {
+                   
+                    // get body data
+                    this.results = res;
+
+                    return res
+                    //console.log( JSON.parse(this.results));
+            
+                });
+                // sbdinc keys
+                // let response = await axios.get(`${state.apiUrl}`, {
+                //     params: {
+                //         q: plan,
+                //         app_id: '903de977',
+                //         app_key: '1b5fbf78de2db637b392f141c524222c\t',
+                //         from: 0,
+                //         to: 9
+                //     }
+                // });
+                
+              console.log(this.results);
+              
+                commit('setQuery', query);
+                commit('setRecipes', this.results.data.hits);
+                console.log(this.state.query);
+                
+
+            } catch (error) {
+                commit('setRecipes', []);
+            }
+        },
+        onChange ({  commit },e)
+         {
+            commit('setQuery', e.target.value);
+              
+        },
     },
    
 });
